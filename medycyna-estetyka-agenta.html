@@ -1,0 +1,1208 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-M6LDS7VD');</script>
+    <!-- End Google Tag Manager -->
+    <!-- Meta Pixel Code -->
+    <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '827829083588829');
+    fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=827829083588829&ev=PageView&noscript=1"
+    /></noscript>
+    <!-- End Meta Pixel Code -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VoiceLink - Estetyka Agenta AI | Placówki Medyczne</title>
+    <meta name="description" content="Skonfiguruj wygląd i zachowanie Twojego asystenta AI VoiceLink dla placówki medycznej. Głos, baza wiedzy, FAQ i więcej.">
+    <meta name="robots" content="noindex, nofollow">
+    <link rel="icon" type="image/png" href="/favicon.png">
+    <meta name="theme-color" content="#9257FD">
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts - Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- EmailJS SDK -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    
+    <!-- Konfiguracja Tailwind -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'inter': ['Inter', 'system-ui', 'sans-serif'],
+                        'grotesk': ['Space Grotesk', 'sans-serif'],
+                    },
+                    colors: {
+                        cream: '#FFFBF5',
+                        sand: '#F8F6F3',
+                        accent: {
+                            purple: '#9257FD',
+                            violet: '#9257FD',
+                            pink: '#fa3cea',
+                            blue: '#3AADFF',
+                            cyan: '#3AADFF',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', system-ui, -apple-system, sans-serif;
+            background: #0a0a0f;
+            color: #e5e5e5;
+            overflow-x: hidden;
+            font-weight: 400;
+            letter-spacing: -0.01em;
+            -webkit-font-smoothing: antialiased;
+            min-height: 100vh;
+        }
+        
+        .mesh-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            background: 
+                radial-gradient(ellipse 80% 50% at 20% 30%, rgba(146, 87, 253, 0.15) 0%, transparent 50%),
+                radial-gradient(ellipse 60% 40% at 80% 70%, rgba(250, 60, 234, 0.1) 0%, transparent 50%),
+                radial-gradient(ellipse 50% 30% at 50% 50%, rgba(58, 173, 255, 0.08) 0%, transparent 50%),
+                linear-gradient(135deg, #0a0a0f 0%, #0f0f18 50%, #0a0a0f 100%);
+        }
+        
+        .gradient-text {
+            background: linear-gradient(135deg, #67e8f9 0%, #a78bfa 50%, #818cf8 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .card-elegant {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            box-shadow: 
+                0 4px 6px -1px rgba(0, 0, 0, 0.3),
+                0 10px 15px -3px rgba(0, 0, 0, 0.2),
+                inset 0 1px 0 rgba(255, 255, 255, 0.05);
+        }
+        
+        .input-field {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .input-field:focus {
+            background: rgba(255, 255, 255, 0.08);
+            border-color: rgba(146, 87, 253, 0.5);
+            box-shadow: 0 0 20px rgba(146, 87, 253, 0.2);
+            outline: none;
+        }
+        
+        .input-field::placeholder {
+            color: rgba(255, 255, 255, 0.4);
+        }
+        
+        .option-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 2px solid rgba(255, 255, 255, 0.06);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .option-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(146, 87, 253, 0.1) 0%, transparent 50%);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        
+        .option-card:hover {
+            background: rgba(255, 255, 255, 0.05);
+            border-color: rgba(146, 87, 253, 0.3);
+            transform: translateY(-2px);
+        }
+        
+        .option-card:hover::before {
+            opacity: 1;
+        }
+        
+        .option-card.selected {
+            background: rgba(146, 87, 253, 0.12);
+            border-color: rgba(146, 87, 253, 0.6);
+            box-shadow: 
+                0 0 30px rgba(146, 87, 253, 0.25),
+                inset 0 1px 0 rgba(255, 255, 255, 0.1);
+            transform: translateY(-2px);
+        }
+        
+        .option-card.selected::before {
+            opacity: 1;
+        }
+        
+        .option-card.selected .option-icon {
+            background: linear-gradient(135deg, #9257FD 0%, #7c3aed 100%);
+            box-shadow: 0 4px 15px rgba(146, 87, 253, 0.4);
+        }
+        
+        .option-card.selected .option-icon svg {
+            color: white !important;
+        }
+        
+        .btn-primary {
+            background: linear-gradient(135deg, #9257FD 0%, #7c3aed 100%);
+            color: white;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(146, 87, 253, 0.3);
+        }
+        
+        .btn-primary::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: left 0.5s ease;
+        }
+        
+        .btn-primary:hover::before {
+            left: 100%;
+        }
+        
+        .btn-primary:hover {
+            box-shadow: 0 10px 40px -5px rgba(146, 87, 253, 0.5);
+            transform: translateY(-2px);
+        }
+        
+        .btn-primary:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+            transform: none;
+        }
+        
+        .icon-box {
+            background: linear-gradient(135deg, rgba(146, 87, 253, 0.2) 0%, rgba(250, 60, 234, 0.1) 100%);
+            border: 1px solid rgba(146, 87, 253, 0.2);
+        }
+        
+        .option-card .check-badge {
+            position: absolute;
+            top: 8px;
+            right: 8px;
+            width: 18px;
+            height: 18px;
+            background: linear-gradient(135deg, #9257FD 0%, #7c3aed 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transform: scale(0);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .option-card.selected .check-badge {
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        .btn-secondary {
+            background: rgba(146, 87, 253, 0.15);
+            border: 1px solid rgba(146, 87, 253, 0.3);
+            color: #a78bfa;
+            transition: all 0.3s ease;
+        }
+
+        .btn-secondary:hover {
+            background: rgba(146, 87, 253, 0.25);
+            border-color: rgba(146, 87, 253, 0.5);
+            transform: translateY(-1px);
+        }
+
+        .btn-danger {
+            background: rgba(239, 68, 68, 0.1);
+            border: 1px solid rgba(239, 68, 68, 0.2);
+            color: #f87171;
+            transition: all 0.3s ease;
+        }
+
+        .btn-danger:hover {
+            background: rgba(239, 68, 68, 0.2);
+            border-color: rgba(239, 68, 68, 0.4);
+        }
+
+        .faq-item {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            transition: all 0.3s ease;
+        }
+
+        .faq-item:hover {
+            border-color: rgba(146, 87, 253, 0.2);
+        }
+        
+        select.input-field {
+            appearance: none;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%239257FD'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 9l-7 7-7-7'%3E%3C/path%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 1rem center;
+            background-size: 1.5rem;
+            padding-right: 3rem;
+        }
+        
+        select.input-field option {
+            background: #1a1a2e;
+            color: #e5e5e5;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        ::-webkit-scrollbar {
+            width: 4px;
+        }
+        
+        ::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        
+        ::-webkit-scrollbar-thumb {
+            background: rgba(146, 87, 253, 0.4);
+            border-radius: 2px;
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .animate-fadeInUp {
+            animation: fadeInUp 0.6s ease-out forwards;
+        }
+        
+        .delay-100 { animation-delay: 0.1s; opacity: 0; }
+        .delay-200 { animation-delay: 0.2s; opacity: 0; }
+        .delay-300 { animation-delay: 0.3s; opacity: 0; }
+        .delay-400 { animation-delay: 0.4s; opacity: 0; }
+        .delay-500 { animation-delay: 0.5s; opacity: 0; }
+        .delay-600 { animation-delay: 0.6s; opacity: 0; }
+        .delay-700 { animation-delay: 0.7s; opacity: 0; }
+        
+        @keyframes checkmark {
+            0% { transform: scale(0); }
+            50% { transform: scale(1.2); }
+            100% { transform: scale(1); }
+        }
+        
+        .success-checkmark {
+            animation: checkmark 0.5s ease-out forwards;
+        }
+        
+        @keyframes pulse-glow {
+            0%, 100% { box-shadow: 0 0 20px rgba(146, 87, 253, 0.3); }
+            50% { box-shadow: 0 0 40px rgba(146, 87, 253, 0.5); }
+        }
+        
+        .pulse-glow {
+            animation: pulse-glow 2s ease-in-out infinite;
+        }
+        
+        #privacyModal {
+            animation: fadeIn 0.2s ease-out;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        #privacyModal .bg-\[\#12121a\] {
+            animation: modalSlideIn 0.3s ease-out;
+        }
+        
+        @keyframes modalSlideIn {
+            from {
+                opacity: 0;
+                transform: scale(0.95) translateY(10px);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1) translateY(0);
+            }
+        }
+
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                max-height: 0;
+                transform: translateY(-10px);
+            }
+            to {
+                opacity: 1;
+                max-height: 500px;
+                transform: translateY(0);
+            }
+        }
+
+        .faq-enter {
+            animation: slideDown 0.3s ease-out forwards;
+        }
+    </style>
+</head>
+<body class="font-inter">
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-M6LDS7VD"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    
+    <!-- Background mesh -->
+    <div class="mesh-bg"></div>
+
+    <!-- Main Container -->
+    <div class="min-h-screen py-6 px-4 sm:px-6">
+        <div class="max-w-2xl mx-auto">
+            
+            <!-- Header -->
+            <div class="text-center mb-8 animate-fadeInUp">
+                <!-- Logo -->
+                <a href="index.html" class="inline-block mb-4">
+                    <img src="logo.png" alt="VoiceLink" class="h-12 sm:h-14 w-auto mx-auto">
+                </a>
+                
+                <h1 class="text-2xl sm:text-3xl font-bold mb-3">
+                    <span class="gradient-text">Konfiguracja Agenta AI</span>
+                </h1>
+                <p class="text-gray-400 text-sm sm:text-base max-w-lg mx-auto">
+                    Skonfiguruj estetykę i zachowanie asystenta AI dla Twojej placówki medycznej
+                </p>
+            </div>
+
+            <!-- Form Card -->
+            <form id="assistantForm" class="card-elegant rounded-2xl p-5 sm:p-6 animate-fadeInUp delay-100">
+                
+                <!-- Progress indicator -->
+                <div class="flex items-center justify-center gap-2 mb-6">
+                    <div class="flex items-center gap-1.5">
+                        <div class="w-8 h-8 rounded-full bg-gradient-to-r from-accent-purple to-accent-pink flex items-center justify-center text-white font-semibold text-xs">1</div>
+                        <span class="text-gray-400 text-xs hidden sm:inline">Głos</span>
+                    </div>
+                    <div class="w-6 sm:w-10 h-0.5 bg-gradient-to-r from-accent-purple/50 to-accent-cyan/50"></div>
+                    <div class="flex items-center gap-1.5">
+                        <div class="w-8 h-8 rounded-full bg-gradient-to-r from-accent-cyan to-accent-blue flex items-center justify-center text-white font-semibold text-xs">2</div>
+                        <span class="text-gray-400 text-xs hidden sm:inline">Wiedza</span>
+                    </div>
+                    <div class="w-6 sm:w-10 h-0.5 bg-gradient-to-r from-accent-cyan/50 to-accent-pink/50"></div>
+                    <div class="flex items-center gap-1.5">
+                        <div class="w-8 h-8 rounded-full bg-gradient-to-r from-accent-pink to-accent-purple flex items-center justify-center text-white font-semibold text-xs">3</div>
+                        <span class="text-gray-400 text-xs hidden sm:inline">Ustawienia</span>
+                    </div>
+                </div>
+
+                <!-- ============================================= -->
+                <!-- SECTION 1: Głos i osobowość agenta -->
+                <!-- ============================================= -->
+                <div class="mb-6 animate-fadeInUp delay-200">
+                    <div class="flex items-center gap-2 mb-4">
+                        <div class="icon-box w-9 h-9 rounded-lg flex items-center justify-center">
+                            <svg class="w-4 h-4 text-accent-cyan" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z"/>
+                            </svg>
+                        </div>
+                        <div>
+                            <h2 class="text-base font-semibold text-white">Głos i osobowość agenta</h2>
+                            <p class="text-gray-500 text-xs">Jak ma brzmieć i zachowywać się Twój asystent</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Wybór głosu -->
+                    <div class="mb-5">
+                        <label class="block text-xs font-medium text-gray-300 mb-3">
+                            <span class="flex items-center gap-1.5">
+                                <svg class="w-3.5 h-3.5 text-accent-pink" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/>
+                                </svg>
+                                Preferowany głos agenta AI *
+                            </span>
+                        </label>
+                        <div class="grid grid-cols-3 gap-3">
+                            <label class="option-card rounded-xl p-3 text-center cursor-pointer relative" data-value="female">
+                                <input type="radio" name="assistant_voice" value="Kobiecy" class="hidden" required>
+                                <div class="check-badge">
+                                    <svg class="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/>
+                                    </svg>
+                                </div>
+                                <div class="option-icon w-10 h-10 rounded-lg bg-white/10 flex items-center justify-center mx-auto mb-2 transition-all">
+                                    <svg class="w-5 h-5 text-pink-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M5.121 17.804A13.937 13.937 0 0112 16c2.5 0 4.847.655 6.879 1.804M15 10a3 3 0 11-6 0 3 3 0 016 0zm6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                                    </svg>
+                                </div>
+                                <span class="text-white font-semibold text-sm">Kobiecy</span>
+                                <p class="text-gray-500 text-[10px] mt-1 hidden sm:block">Ciepły głos żeński</p>
+                            </label>
+                            <label class="option-card rounded-xl p-3 text-center cursor-pointer relative" data-value="male">
+                                <input type="radio" name="assistant_voice" value="Męski" class="hidden">
+                                <div class="check-badge">
+                                    <svg class="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/>
+                                    </svg>
+                                </div>
+                                <div class="option-icon w-10 h-10 rounded-lg bg-white/10 flex items-center justify-center mx-auto mb-2 transition-all">
+                                    <svg class="w-5 h-5 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/>
+                                    </svg>
+                                </div>
+                                <span class="text-white font-semibold text-sm">Męski</span>
+                                <p class="text-gray-500 text-[10px] mt-1 hidden sm:block">Rzeczowy głos męski</p>
+                            </label>
+                            <label class="option-card rounded-xl p-3 text-center cursor-pointer relative" data-value="no_preference">
+                                <input type="radio" name="assistant_voice" value="Bez preferencji" class="hidden">
+                                <div class="check-badge">
+                                    <svg class="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/>
+                                    </svg>
+                                </div>
+                                <div class="option-icon w-10 h-10 rounded-lg bg-white/10 flex items-center justify-center mx-auto mb-2 transition-all">
+                                    <svg class="w-5 h-5 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/>
+                                    </svg>
+                                </div>
+                                <span class="text-white font-semibold text-sm">Bez preferencji</span>
+                                <p class="text-gray-500 text-[10px] mt-1 hidden sm:block">Dobierzemy głos</p>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Ton rozmowy -->
+                    <div class="mb-5">
+                        <label class="block text-xs font-medium text-gray-300 mb-3">
+                            <span class="flex items-center gap-1.5">
+                                <svg class="w-3.5 h-3.5 text-accent-cyan" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 8h10M7 12h4m1 8l-4-4H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-3l-4 4z"/>
+                                </svg>
+                                Ton rozmowy agenta *
+                            </span>
+                        </label>
+                        <div class="grid grid-cols-2 sm:grid-cols-4 gap-3">
+                            <label class="option-card rounded-xl p-3 text-center cursor-pointer relative" data-value="formalny">
+                                <input type="radio" name="voice_tone" value="Formalny" class="hidden" required>
+                                <div class="check-badge">
+                                    <svg class="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/>
+                                    </svg>
+                                </div>
+                                <div class="option-icon w-10 h-10 rounded-lg bg-white/10 flex items-center justify-center mx-auto mb-2 transition-all">
+                                    <svg class="w-5 h-5 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                                    </svg>
+                                </div>
+                                <span class="text-white font-semibold text-sm">Formalny</span>
+                                <p class="text-gray-500 text-[10px] mt-0.5">Per Pan/Pani</p>
+                            </label>
+                            <label class="option-card rounded-xl p-3 text-center cursor-pointer relative" data-value="przyjazny">
+                                <input type="radio" name="voice_tone" value="Przyjazny i profesjonalny" class="hidden">
+                                <div class="check-badge">
+                                    <svg class="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/>
+                                    </svg>
+                                </div>
+                                <div class="option-icon w-10 h-10 rounded-lg bg-white/10 flex items-center justify-center mx-auto mb-2 transition-all">
+                                    <svg class="w-5 h-5 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                                    </svg>
+                                </div>
+                                <span class="text-white font-semibold text-sm">Przyjazny</span>
+                                <p class="text-gray-500 text-[10px] mt-0.5">Ciepły, profesjonalny</p>
+                            </label>
+                            <label class="option-card rounded-xl p-3 text-center cursor-pointer relative" data-value="empatyczny">
+                                <input type="radio" name="voice_tone" value="Empatyczny" class="hidden">
+                                <div class="check-badge">
+                                    <svg class="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/>
+                                    </svg>
+                                </div>
+                                <div class="option-icon w-10 h-10 rounded-lg bg-white/10 flex items-center justify-center mx-auto mb-2 transition-all">
+                                    <svg class="w-5 h-5 text-pink-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>
+                                    </svg>
+                                </div>
+                                <span class="text-white font-semibold text-sm">Empatyczny</span>
+                                <p class="text-gray-500 text-[10px] mt-0.5">Troskliwy, spokojny</p>
+                            </label>
+                            <label class="option-card rounded-xl p-3 text-center cursor-pointer relative" data-value="rzeczowy">
+                                <input type="radio" name="voice_tone" value="Rzeczowy i konkretny" class="hidden">
+                                <div class="check-badge">
+                                    <svg class="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/>
+                                    </svg>
+                                </div>
+                                <div class="option-icon w-10 h-10 rounded-lg bg-white/10 flex items-center justify-center mx-auto mb-2 transition-all">
+                                    <svg class="w-5 h-5 text-yellow-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+                                    </svg>
+                                </div>
+                                <span class="text-white font-semibold text-sm">Rzeczowy</span>
+                                <p class="text-gray-500 text-[10px] mt-0.5">Szybki, konkretny</p>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Imię agenta -->
+                    <div class="mb-5">
+                        <label class="block text-xs font-medium text-gray-300 mb-1.5">
+                            <span class="flex items-center gap-1.5">
+                                <svg class="w-3.5 h-3.5 text-accent-purple" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z"/>
+                                </svg>
+                                Imię agenta (opcjonalne)
+                            </span>
+                        </label>
+                        <input type="text" name="agent_name" 
+                            class="input-field w-full px-3 py-2.5 rounded-lg text-white text-sm"
+                            placeholder="np. Anna, Maja, Tomek... (lub zostaw puste - dobierzemy)">
+                        <p class="text-gray-500 text-[10px] mt-1">Jak agent ma się przedstawiać pacjentom</p>
+                    </div>
+
+                    <!-- Powitanie -->
+                    <div>
+                        <label class="block text-xs font-medium text-gray-300 mb-1.5">
+                            <span class="flex items-center gap-1.5">
+                                <svg class="w-3.5 h-3.5 text-accent-cyan" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z"/>
+                                </svg>
+                                Preferowane powitanie (opcjonalne)
+                            </span>
+                        </label>
+                        <textarea name="greeting" rows="2" 
+                            class="input-field w-full px-3 py-2.5 rounded-lg text-white text-sm resize-none"
+                            placeholder="np. Dzień dobry, tu Anna z Kliniki MedCare. W czym mogę pomóc?"></textarea>
+                        <p class="text-gray-500 text-[10px] mt-1">Jak agent ma się witać z dzwoniącymi pacjentami</p>
+                    </div>
+                </div>
+
+                <!-- Divider -->
+                <div class="h-px bg-gradient-to-r from-transparent via-accent-cyan/30 to-transparent mb-6"></div>
+
+                <!-- ============================================= -->
+                <!-- SECTION 3: Baza wiedzy i FAQ -->
+                <!-- ============================================= -->
+                <div class="mb-6 animate-fadeInUp delay-300">
+                    <div class="flex items-center gap-2 mb-4">
+                        <div class="icon-box w-9 h-9 rounded-lg flex items-center justify-center">
+                            <svg class="w-4 h-4 text-accent-pink" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
+                            </svg>
+                        </div>
+                        <div>
+                            <h2 class="text-base font-semibold text-white">Baza wiedzy agenta</h2>
+                            <p class="text-gray-500 text-xs">Informacje, które agent powinien znać o Twojej placówce</p>
+                        </div>
+                    </div>
+
+                    <!-- Informacje o placówce -->
+                    <div class="mb-5">
+                        <label class="block text-xs font-medium text-gray-300 mb-1.5">
+                            <span class="flex items-center gap-1.5">
+                                <svg class="w-3.5 h-3.5 text-accent-purple" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                                </svg>
+                                Kluczowe informacje o placówce *
+                            </span>
+                        </label>
+                        <textarea name="knowledge_base" rows="4" required
+                            class="input-field w-full px-3 py-2.5 rounded-lg text-white text-sm resize-none"
+                            placeholder="Opisz najważniejsze informacje o placówce, np.:
+- Adres i godziny otwarcia
+- Lista lekarzy i ich specjalizacje
+- Oferowane zabiegi/usługi
+- Ceny kluczowych usług
+- Informacje o przygotowaniu do wizyt
+- Inne ważne informacje..."></textarea>
+                        <p class="text-gray-500 text-[10px] mt-1">Im więcej informacji podasz, tym lepiej agent będzie odpowiadał pacjentom</p>
+                    </div>
+
+                    <!-- FAQ - Najczęściej zadawane pytania -->
+                    <div>
+                        <label class="block text-xs font-medium text-gray-300 mb-3">
+                            <span class="flex items-center gap-1.5">
+                                <svg class="w-3.5 h-3.5 text-accent-cyan" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                                </svg>
+                                Najczęściej zadawane pytania (FAQ)
+                            </span>
+                        </label>
+                        <p class="text-gray-500 text-[10px] mb-3">Dodaj pytania, które pacjenci najczęściej zadają, wraz z odpowiedziami</p>
+                        
+                        <div id="faqContainer" class="space-y-3">
+                            <!-- FAQ items will be added here dynamically -->
+                        </div>
+
+                        <button type="button" id="addFaqBtn" 
+                            class="btn-secondary w-full mt-3 py-2.5 rounded-lg text-sm font-medium flex items-center justify-center gap-2">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"/>
+                            </svg>
+                            Dodaj pytanie FAQ
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Divider -->
+                <div class="h-px bg-gradient-to-r from-transparent via-accent-pink/30 to-transparent mb-6"></div>
+
+                <!-- ============================================= -->
+                <!-- SECTION 4: Ustawienia techniczne -->
+                <!-- ============================================= -->
+                <div class="mb-6 animate-fadeInUp delay-400">
+                    <div class="flex items-center gap-2 mb-4">
+                        <div class="icon-box w-9 h-9 rounded-lg flex items-center justify-center">
+                            <svg class="w-4 h-4 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.066 2.573c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.573 1.066c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.066-2.573c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/>
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
+                            </svg>
+                        </div>
+                        <div>
+                            <h2 class="text-base font-semibold text-white">Ustawienia techniczne</h2>
+                            <p class="text-gray-500 text-xs">Kalendarze, przekierowania i inne opcje</p>
+                        </div>
+                    </div>
+
+                    <!-- Numer do przekierowania -->
+                    <div class="mb-5">
+                        <label class="block text-xs font-medium text-gray-300 mb-1.5">
+                            <span class="flex items-center gap-1.5">
+                                <svg class="w-3.5 h-3.5 text-accent-pink" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4"/>
+                                </svg>
+                                Numer telefonu do przekierowania na człowieka *
+                            </span>
+                        </label>
+                        <input type="tel" name="redirect_phone" required 
+                            class="input-field w-full px-3 py-2.5 rounded-lg text-white text-sm"
+                            placeholder="np. +48 987 654 321">
+                        <p class="text-gray-500 text-[10px] mt-1">Numer, na który agent przekieruje rozmowę gdy pacjent poprosi o kontakt z człowiekiem</p>
+                    </div>
+
+                    <!-- Kiedy przekierować -->
+                    <div class="mb-5">
+                        <label class="block text-xs font-medium text-gray-300 mb-1.5">
+                            <span class="flex items-center gap-1.5">
+                                <svg class="w-3.5 h-3.5 text-yellow-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/>
+                                </svg>
+                                W jakich sytuacjach agent ma przekierować na człowieka?
+                            </span>
+                        </label>
+                        <textarea name="redirect_scenarios" rows="2"
+                            class="input-field w-full px-3 py-2.5 rounded-lg text-white text-sm resize-none"
+                            placeholder="np. nagłe przypadki, reklamacje, pytania o wyniki badań, rozmowa z lekarzem..."></textarea>
+                    </div>
+
+                    <!-- Godziny pracy agenta -->
+                    <div class="mb-5">
+                        <label class="block text-xs font-medium text-gray-300 mb-3">
+                            <span class="flex items-center gap-1.5">
+                                <svg class="w-3.5 h-3.5 text-accent-purple" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                                </svg>
+                                Godziny pracy agenta *
+                            </span>
+                        </label>
+                        <div class="grid grid-cols-2 gap-3">
+                            <label class="option-card rounded-xl p-3 text-center cursor-pointer relative" data-value="24/7">
+                                <input type="radio" name="working_hours" value="24/7 - całodobowo" class="hidden" required>
+                                <div class="check-badge">
+                                    <svg class="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/>
+                                    </svg>
+                                </div>
+                                <div class="option-icon w-10 h-10 rounded-lg bg-white/10 flex items-center justify-center mx-auto mb-2 transition-all">
+                                    <svg class="w-5 h-5 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                                    </svg>
+                                </div>
+                                <span class="text-white font-semibold text-sm">24/7</span>
+                                <p class="text-gray-500 text-[10px] mt-0.5">Całodobowo</p>
+                            </label>
+                            <label class="option-card rounded-xl p-3 text-center cursor-pointer relative" data-value="godziny_pracy">
+                                <input type="radio" name="working_hours" value="Godziny pracy placówki" class="hidden">
+                                <div class="check-badge">
+                                    <svg class="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/>
+                                    </svg>
+                                </div>
+                                <div class="option-icon w-10 h-10 rounded-lg bg-white/10 flex items-center justify-center mx-auto mb-2 transition-all">
+                                    <svg class="w-5 h-5 text-accent-cyan" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/>
+                                    </svg>
+                                </div>
+                                <span class="text-white font-semibold text-sm">Godziny pracy</span>
+                                <p class="text-gray-500 text-[10px] mt-0.5">Według placówki</p>
+                            </label>
+                        </div>
+                        <div id="workingHoursInput" class="mt-3 hidden">
+                            <input type="text" name="working_hours_detail" 
+                                class="input-field w-full px-3 py-2.5 rounded-lg text-white text-sm"
+                                placeholder="np. Pon-Pt 8:00-18:00, Sob 9:00-13:00">
+                        </div>
+                    </div>
+
+                    <!-- Uwagi dodatkowe -->
+                    <div>
+                        <label class="block text-xs font-medium text-gray-300 mb-1.5">
+                            <span class="flex items-center gap-1.5">
+                                <svg class="w-3.5 h-3.5 text-accent-purple" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 8h10M7 12h4m1 8l-4-4H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-3l-4 4z"/>
+                                </svg>
+                                Dodatkowe uwagi lub wymagania
+                            </span>
+                        </label>
+                        <textarea name="notes" rows="3" 
+                            class="input-field w-full px-3 py-2.5 rounded-lg text-white text-sm resize-none"
+                            placeholder="Inne wymagania, specjalne procedury, integracje z systemami, dodatkowe instrukcje dla agenta..."></textarea>
+                    </div>
+                </div>
+
+                <!-- Submit Section -->
+                <div class="animate-fadeInUp delay-500">
+                    <label class="flex items-start gap-2 mb-4 cursor-pointer group">
+                        <div class="relative mt-0.5">
+                            <input type="checkbox" name="agreement" required class="peer sr-only">
+                            <div class="w-4 h-4 rounded border-2 border-white/20 bg-white/5 peer-checked:bg-accent-purple peer-checked:border-accent-purple transition-all flex items-center justify-center">
+                                <svg class="w-2.5 h-2.5 text-white opacity-0 peer-checked:opacity-100 transition-opacity" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/>
+                                </svg>
+                            </div>
+                        </div>
+                        <span class="text-gray-400 text-xs group-hover:text-gray-300 transition-colors">
+                            Wyrażam zgodę na przetwarzanie danych w celu kontaktu. 
+                            <button type="button" onclick="openPrivacyModal()" class="text-accent-purple hover:underline">Polityka prywatności</button>
+                        </span>
+                    </label>
+                    
+                    <button type="submit" id="submitBtn" 
+                        class="btn-primary w-full py-3 rounded-lg text-white font-semibold text-sm flex items-center justify-center gap-2">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"/>
+                        </svg>
+                        <span id="submitText">Wyślij konfigurację agenta</span>
+                        <div id="submitLoader" class="hidden">
+                            <svg class="animate-spin w-4 h-4" fill="none" viewBox="0 0 24 24">
+                                <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                                <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                            </svg>
+                        </div>
+                    </button>
+                    
+                    <p class="text-center text-gray-500 text-[10px] mt-3">
+                        <svg class="w-3 h-3 inline mr-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/>
+                        </svg>
+                        Twoje dane są bezpieczne
+                    </p>
+                </div>
+            </form>
+
+            <!-- Success Message -->
+            <div id="successMessage" class="hidden card-elegant rounded-2xl p-6 text-center">
+                <div class="success-checkmark w-14 h-14 rounded-full bg-gradient-to-r from-green-400 to-emerald-500 flex items-center justify-center mx-auto mb-4">
+                    <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/>
+                    </svg>
+                </div>
+                <h2 class="text-xl font-bold text-white mb-2">Dziękujemy!</h2>
+                <p class="text-gray-400 text-sm mb-4">Konfiguracja Twojego agenta AI została wysłana. Przygotujemy go zgodnie z Twoimi preferencjami!</p>
+                <a href="index.html" class="btn-primary inline-flex items-center gap-2 px-4 py-2 rounded-lg text-white text-sm font-medium">
+                    <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/>
+                    </svg>
+                    Wróć na stronę główną
+                </a>
+            </div>
+
+            <!-- Footer -->
+            <div class="text-center mt-8 text-gray-500 text-xs">
+                <p>&copy; 2026 VoiceLink</p>
+                <p class="mt-1">
+                    <a href="index.html" class="text-accent-purple hover:underline">Strona główna</a>
+                    <span class="mx-1.5">&bull;</span>
+                    <button onclick="openPrivacyModal()" class="text-gray-400 hover:text-white">Polityka prywatności</button>
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Privacy Policy Modal -->
+    <div id="privacyModal" class="fixed inset-0 z-50 hidden">
+        <div class="absolute inset-0 bg-black/80 backdrop-blur-sm" onclick="closePrivacyModal()"></div>
+        <div class="absolute inset-4 sm:inset-8 md:inset-12 lg:inset-20 flex items-center justify-center">
+            <div class="relative w-full max-w-2xl max-h-full bg-[#12121a] border border-white/10 rounded-2xl shadow-2xl overflow-hidden flex flex-col">
+                <div class="flex items-center justify-between p-4 border-b border-white/10 flex-shrink-0">
+                    <div class="flex items-center gap-3">
+                        <div class="w-8 h-8 rounded-lg bg-gradient-to-r from-accent-purple to-accent-pink flex items-center justify-center">
+                            <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-lg font-semibold text-white">Polityka Prywatności</h3>
+                    </div>
+                    <button onclick="closePrivacyModal()" class="w-8 h-8 rounded-lg bg-white/5 hover:bg-white/10 flex items-center justify-center transition-colors">
+                        <svg class="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+                        </svg>
+                    </button>
+                </div>
+                <div class="p-5 overflow-y-auto flex-grow">
+                    <p class="text-gray-400 text-xs mb-4">B4WOOD SP. Z O.O. – Usługa „VoiceLink AI Secretary" | Aktualizacja: styczeń 2026</p>
+                    <div class="mb-5">
+                        <h4 class="text-sm font-semibold text-white mb-2 flex items-center gap-2">
+                            <svg class="w-4 h-4 text-accent-purple" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/>
+                            </svg>
+                            Administrator danych
+                        </h4>
+                        <div class="bg-white/5 rounded-xl p-3 text-xs text-gray-300">
+                            <p class="font-medium text-white">B4wood sp. z o.o.</p>
+                            <p>ul. Bukowa 21, 87-148 Łysomice</p>
+                            <p>NIP: 8792746178</p>
+                            <p class="mt-1">E-mail: <span class="text-accent-cyan">karol.kulis@voicelink.pl</span></p>
+                        </div>
+                    </div>
+                    <div class="mb-5">
+                        <h4 class="text-sm font-semibold text-white mb-2 flex items-center gap-2">
+                            <svg class="w-4 h-4 text-accent-cyan" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+                            </svg>
+                            Jakie dane przetwarzamy?
+                        </h4>
+                        <ul class="text-xs text-gray-300 space-y-1.5">
+                            <li class="flex items-start gap-2"><span class="text-accent-purple mt-0.5">&bull;</span><span>Imię i nazwisko, adres e-mail, numer telefonu</span></li>
+                            <li class="flex items-start gap-2"><span class="text-accent-purple mt-0.5">&bull;</span><span>Nazwa placówki / firmy</span></li>
+                            <li class="flex items-start gap-2"><span class="text-accent-purple mt-0.5">&bull;</span><span>Informacje o systemach, preferencjach i konfiguracji agenta</span></li>
+                            <li class="flex items-start gap-2"><span class="text-accent-purple mt-0.5">&bull;</span><span>Treść wiadomości, FAQ i bazy wiedzy przekazanych w formularzu</span></li>
+                        </ul>
+                    </div>
+                    <div class="mb-5">
+                        <h4 class="text-sm font-semibold text-white mb-2 flex items-center gap-2">
+                            <svg class="w-4 h-4 text-accent-pink" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+                            </svg>
+                            Cel przetwarzania
+                        </h4>
+                        <ul class="text-xs text-gray-300 space-y-1.5">
+                            <li class="flex items-start gap-2"><span class="text-accent-pink mt-0.5">&bull;</span><span>Konfiguracja i personalizacja asystenta AI</span></li>
+                            <li class="flex items-start gap-2"><span class="text-accent-pink mt-0.5">&bull;</span><span>Przygotowanie spersonalizowanej oferty</span></li>
+                            <li class="flex items-start gap-2"><span class="text-accent-pink mt-0.5">&bull;</span><span>Realizacja usługi VoiceLink AI Secretary</span></li>
+                        </ul>
+                        <p class="text-xs text-gray-400 mt-2">
+                            <span class="font-medium">Podstawa prawna:</span> art. 6 ust. 1 lit. b RODO (wykonanie umowy) oraz art. 6 ust. 1 lit. a RODO (zgoda).
+                        </p>
+                    </div>
+                    <div class="mb-5">
+                        <h4 class="text-sm font-semibold text-white mb-2 flex items-center gap-2">
+                            <svg class="w-4 h-4 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
+                            </svg>
+                            Twoje prawa
+                        </h4>
+                        <div class="grid grid-cols-2 gap-2 text-xs text-gray-300">
+                            <div class="bg-white/5 rounded-lg p-2 flex items-center gap-2"><svg class="w-3.5 h-3.5 text-green-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg><span>Dostęp do danych</span></div>
+                            <div class="bg-white/5 rounded-lg p-2 flex items-center gap-2"><svg class="w-3.5 h-3.5 text-green-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg><span>Sprostowanie</span></div>
+                            <div class="bg-white/5 rounded-lg p-2 flex items-center gap-2"><svg class="w-3.5 h-3.5 text-green-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg><span>Usunięcie danych</span></div>
+                            <div class="bg-white/5 rounded-lg p-2 flex items-center gap-2"><svg class="w-3.5 h-3.5 text-green-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg><span>Cofnięcie zgody</span></div>
+                            <div class="bg-white/5 rounded-lg p-2 flex items-center gap-2"><svg class="w-3.5 h-3.5 text-green-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg><span>Przenoszenie</span></div>
+                            <div class="bg-white/5 rounded-lg p-2 flex items-center gap-2"><svg class="w-3.5 h-3.5 text-green-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg><span>Skarga do UODO</span></div>
+                        </div>
+                    </div>
+                    <div class="bg-gradient-to-r from-accent-purple/10 to-accent-cyan/10 rounded-xl p-4 border border-accent-purple/20">
+                        <div class="flex items-start gap-3">
+                            <div class="w-8 h-8 rounded-lg bg-accent-purple/20 flex items-center justify-center flex-shrink-0">
+                                <svg class="w-4 h-4 text-accent-purple" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <h4 class="text-sm font-semibold text-white mb-1">Bezpieczeństwo danych</h4>
+                                <p class="text-xs text-gray-300">
+                                    Stosujemy odpowiednie środki techniczne i organizacyjne w celu ochrony Twoich danych. 
+                                    Dane nie są udostępniane osobom trzecim bez Twojej zgody.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="p-4 border-t border-white/10 flex-shrink-0">
+                    <div class="flex items-center justify-end">
+                        <button onclick="closePrivacyModal()" class="px-4 py-2 bg-accent-purple hover:bg-accent-purple/80 text-white text-xs font-medium rounded-lg transition-colors">
+                            Rozumiem
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const EMAILJS_PUBLIC_KEY = 'mG32cTUD-1-xjbv8D';
+        const EMAILJS_SERVICE_ID = 'service_khvqevm';
+        const EMAILJS_TEMPLATE_ID = 'template_9bf1dfh';
+        
+        (function() {
+            emailjs.init(EMAILJS_PUBLIC_KEY);
+        })();
+
+        // =============================================
+        // OPTION CARDS (Radio)
+        // =============================================
+        document.querySelectorAll('.option-card').forEach(card => {
+            card.addEventListener('click', function() {
+                const input = this.querySelector('input[type="radio"]');
+                if (!input) return;
+                const name = input.name;
+                
+                document.querySelectorAll(`input[name="${name}"]`).forEach(radio => {
+                    radio.closest('.option-card').classList.remove('selected');
+                });
+                
+                this.classList.add('selected');
+                input.checked = true;
+
+                if (name === 'working_hours') {
+                    const hoursInput = document.getElementById('workingHoursInput');
+                    if (input.value === 'Godziny pracy placówki') {
+                        hoursInput.classList.remove('hidden');
+                        hoursInput.querySelector('input').focus();
+                    } else {
+                        hoursInput.classList.add('hidden');
+                        hoursInput.querySelector('input').value = '';
+                    }
+                }
+            });
+        });
+
+        // =============================================
+        // FAQ DYNAMIC FIELDS
+        // =============================================
+        let faqCount = 0;
+
+        function addFaqItem() {
+            faqCount++;
+            const container = document.getElementById('faqContainer');
+            const item = document.createElement('div');
+            item.className = 'faq-item rounded-xl p-4 faq-enter';
+            item.id = `faq-${faqCount}`;
+            item.innerHTML = `
+                <div class="flex items-center justify-between mb-3">
+                    <span class="text-xs font-medium text-accent-purple flex items-center gap-1.5">
+                        <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                        </svg>
+                        Pytanie #${faqCount}
+                    </span>
+                    <button type="button" onclick="removeFaqItem('faq-${faqCount}')" class="btn-danger px-2 py-1 rounded-md text-[10px] font-medium flex items-center gap-1">
+                        <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"/>
+                        </svg>
+                        Usuń
+                    </button>
+                </div>
+                <input type="text" name="faq_question_${faqCount}" 
+                    class="input-field w-full px-3 py-2 rounded-lg text-white text-sm mb-2"
+                    placeholder="Pytanie, np. Jak przygotować się do wizyty?">
+                <textarea name="faq_answer_${faqCount}" rows="2"
+                    class="input-field w-full px-3 py-2 rounded-lg text-white text-sm resize-none"
+                    placeholder="Odpowiedź na pytanie..."></textarea>
+            `;
+            container.appendChild(item);
+            item.querySelector('input').focus();
+        }
+
+        function removeFaqItem(id) {
+            const item = document.getElementById(id);
+            if (item) {
+                item.style.opacity = '0';
+                item.style.transform = 'translateY(-10px)';
+                item.style.transition = 'all 0.2s ease';
+                setTimeout(() => item.remove(), 200);
+            }
+        }
+
+        document.getElementById('addFaqBtn').addEventListener('click', addFaqItem);
+
+        // =============================================
+        // CHECKBOX STYLING
+        // =============================================
+        document.querySelectorAll('input[type="checkbox"]').forEach(checkbox => {
+            checkbox.addEventListener('change', function() {
+                const checkIcon = this.nextElementSibling?.querySelector('svg');
+                if (!checkIcon) return;
+                if (this.checked) {
+                    checkIcon.classList.remove('opacity-0');
+                    checkIcon.classList.add('opacity-100');
+                } else {
+                    checkIcon.classList.remove('opacity-100');
+                    checkIcon.classList.add('opacity-0');
+                }
+            });
+        });
+
+        // =============================================
+        // FORM SUBMISSION
+        // =============================================
+        document.getElementById('assistantForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            const submitBtn = document.getElementById('submitBtn');
+            const submitText = document.getElementById('submitText');
+            const submitLoader = document.getElementById('submitLoader');
+            
+            submitBtn.disabled = true;
+            submitText.textContent = 'Wysyłanie...';
+            submitLoader.classList.remove('hidden');
+            
+            const formData = new FormData(this);
+
+            let workingHours = formData.get('working_hours');
+            if (workingHours === 'Godziny pracy placówki') {
+                const detail = formData.get('working_hours_detail');
+                if (detail) workingHours += ': ' + detail;
+            }
+
+            let faqEntries = [];
+            document.querySelectorAll('#faqContainer .faq-item').forEach(item => {
+                const qInput = item.querySelector('input[name^="faq_question"]');
+                const aInput = item.querySelector('textarea[name^="faq_answer"]');
+                if (qInput && aInput && qInput.value.trim()) {
+                    faqEntries.push(`P: ${qInput.value.trim()}\nO: ${aInput.value.trim()}`);
+                }
+            });
+            const faqString = faqEntries.length > 0 ? faqEntries.join('\n\n') : 'Brak FAQ';
+
+            const data = {
+                assistant_voice: formData.get('assistant_voice') || 'Nie wybrano',
+                voice_tone: formData.get('voice_tone') || 'Nie wybrano',
+                agent_name: formData.get('agent_name') || 'Do ustalenia',
+                greeting: formData.get('greeting') || 'Domyślne powitanie',
+                knowledge_base: formData.get('knowledge_base') || 'Nie podano',
+                faq: faqString,
+                redirect_phone: formData.get('redirect_phone') || 'Nie podano',
+                redirect_scenarios: formData.get('redirect_scenarios') || 'Nie podano',
+                working_hours: workingHours || 'Nie wybrano',
+                notes: formData.get('notes') || 'Brak dodatkowych uwag',
+            };
+            
+            try {
+                const response = await emailjs.send(
+                    EMAILJS_SERVICE_ID,
+                    EMAILJS_TEMPLATE_ID,
+                    data
+                );
+                
+                console.log('SUCCESS!', response.status, response.text);
+                
+                document.getElementById('assistantForm').classList.add('hidden');
+                document.getElementById('successMessage').classList.remove('hidden');
+                document.getElementById('successMessage').scrollIntoView({ behavior: 'smooth' });
+                
+            } catch (error) {
+                console.error('FAILED...', error);
+                alert('Wystąpił błąd podczas wysyłania formularza. Spróbuj ponownie lub skontaktuj się z nami bezpośrednio.');
+                submitBtn.disabled = false;
+                submitText.textContent = 'Wyślij konfigurację agenta';
+                submitLoader.classList.add('hidden');
+            }
+        });
+        
+        // =============================================
+        // FORM VALIDATION
+        // =============================================
+        document.querySelectorAll('.input-field').forEach(input => {
+            input.addEventListener('blur', function() {
+                if (this.required && !this.value) {
+                    this.style.borderColor = 'rgba(239, 68, 68, 0.5)';
+                } else {
+                    this.style.borderColor = '';
+                }
+            });
+            
+            input.addEventListener('input', function() {
+                this.style.borderColor = '';
+            });
+        });
+        
+        // =============================================
+        // PRIVACY MODAL
+        // =============================================
+        function openPrivacyModal() {
+            const modal = document.getElementById('privacyModal');
+            modal.classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+            setTimeout(() => {
+                modal.querySelector('.bg-\\[\\#12121a\\]').style.transform = 'scale(1)';
+                modal.querySelector('.bg-\\[\\#12121a\\]').style.opacity = '1';
+            }, 10);
+        }
+        
+        function closePrivacyModal() {
+            const modal = document.getElementById('privacyModal');
+            modal.classList.add('hidden');
+            document.body.style.overflow = '';
+        }
+        
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') closePrivacyModal();
+        });
+    </script>
+</body>
+</html>
