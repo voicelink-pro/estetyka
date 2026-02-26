@@ -1276,35 +1276,35 @@
             
             const formData = new FormData(this);
 
-            const taskLabels = {
-                task_umawianie_wizyt: 'Umawianie wizyt',
-                task_zmiana_terminow: 'Zmiana terminów wizyt',
-                task_info_placowka: 'Info o placówce',
-                task_info_badania: 'Info o badaniach',
-                task_info_oferta: 'Info o ofercie',
-                task_info_terminy: 'Info o terminach',
-                task_odwolywanie_wizyt: 'Odwoływanie wizyt',
-                task_telefon_przed_wizyta: 'Telefon przed wizytą',
-                task_sms_po_rezerwacji: 'SMS po rezerwacji',
-                task_sms_przypomnienie: 'SMS przypomnienie 3h',
-                task_sms_podstawowe: 'SMS - podstawowe info',
-                task_sms_rozszerzone: 'SMS - rozszerzone info',
-                task_sms_inne: 'SMS - inne info',
-                task_jezyk_ukrainski: 'Język ukraiński',
-                task_jezyk_angielski: 'Język angielski'
-            };
-            let tasksSelected = [];
-            let tasksUnselected = [];
-            for (const [key, label] of Object.entries(taskLabels)) {
-                if (formData.get(key)) {
-                    tasksSelected.push(label);
-                } else {
-                    tasksUnselected.push(label);
-                }
-            }
+            function yn(name) { return formData.get(name) ? 'TAK' : 'NIE'; }
+
+            const polaczenia = [
+                'a) Umawianie wizyt: ' + yn('task_umawianie_wizyt'),
+                'b) Zmiana terminów wizyt: ' + yn('task_zmiana_terminow'),
+                'c) Info o placówce: ' + yn('task_info_placowka'),
+                'd) Info o badaniach: ' + yn('task_info_badania'),
+                'e) Info o ofercie: ' + yn('task_info_oferta'),
+                'f) Info o terminach: ' + yn('task_info_terminy'),
+                'g) Odwoływanie wizyt: ' + yn('task_odwolywanie_wizyt'),
+            ].join('\n');
+
+            const potwierdzanie = [
+                'a) Telefon dzień przed wizytą: ' + yn('task_telefon_przed_wizyta'),
+                'b) SMS po rezerwacji: ' + yn('task_sms_po_rezerwacji'),
+                'c) SMS 3h przed wizytą: ' + yn('task_sms_przypomnienie'),
+            ].join('\n');
+
             const smsInneOpis = formData.get('task_sms_inne_opis');
-            if (smsInneOpis) tasksSelected.push('SMS inne opis: ' + smsInneOpis);
-            const tasksString = 'TAK: ' + tasksSelected.join(', ') + (tasksUnselected.length ? '\nNIE: ' + tasksUnselected.join(', ') : '');
+            const zakresSms = [
+                'a) Podstawowe info (data, miejsce, godzina): ' + yn('task_sms_podstawowe'),
+                'b) Rozszerzone info (przygotowanie, lokalizacja): ' + yn('task_sms_rozszerzone'),
+                'c) Inne informacje: ' + yn('task_sms_inne') + (smsInneOpis ? ' — ' + smsInneOpis : ''),
+            ].join('\n');
+
+            const inne = [
+                'Język ukraiński (po wykryciu): ' + yn('task_jezyk_ukrainski'),
+                'Język angielski (po wykryciu): ' + yn('task_jezyk_angielski'),
+            ].join('\n');
 
             let faqEntries = [];
             document.querySelectorAll('#faqContainer .faq-item').forEach(item => {
@@ -1325,7 +1325,10 @@
                 faq: faqString,
                 redirect_phone: formData.get('redirect_phone') || 'Nie podano',
                 redirect_scenarios: formData.get('redirect_scenarios') || 'Nie podano',
-                czynnosci: tasksString,
+                czynnosci_polaczenia: polaczenia,
+                czynnosci_potwierdzanie: potwierdzanie,
+                czynnosci_sms: zakresSms,
+                czynnosci_inne: inne,
                 notes: formData.get('notes') || 'Brak dodatkowych uwag',
             };
             
