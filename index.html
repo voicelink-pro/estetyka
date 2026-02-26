@@ -26,6 +26,17 @@
     src="https://www.facebook.com/tr?id=827829083588829&ev=PageView&noscript=1"
     /></noscript>
     <!-- End Meta Pixel Code -->
+    
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-2MC99CSM7C"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-2MC99CSM7C');
+    </script>
+    <!-- End Google tag -->
+    
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>VoiceLink - Estetyka Agenta AI | Placówki Medyczne</title>
     <meta name="description" content="Skonfiguruj wygląd i zachowanie Twojego asystenta AI VoiceLink dla placówki medycznej. Głos, baza wiedzy, FAQ i więcej.">
@@ -398,6 +409,46 @@
         .faq-enter {
             animation: slideDown 0.3s ease-out forwards;
         }
+
+        .task-checkbox .task-check {
+            transition: all 0.2s ease;
+        }
+
+        .task-checkbox input:not(:checked) + .task-check svg {
+            opacity: 0;
+        }
+
+        .task-checkbox input:checked + .task-check svg {
+            opacity: 1;
+        }
+
+        .task-cyan input:checked + .task-check {
+            background: linear-gradient(135deg, #22d3ee 0%, #06b6d4 100%);
+            border-color: #22d3ee;
+            box-shadow: 0 2px 10px rgba(34, 211, 238, 0.3);
+        }
+        .task-cyan:hover .task-check { border-color: rgba(34, 211, 238, 0.5); }
+
+        .task-emerald input:checked + .task-check {
+            background: linear-gradient(135deg, #34d399 0%, #10b981 100%);
+            border-color: #34d399;
+            box-shadow: 0 2px 10px rgba(52, 211, 153, 0.3);
+        }
+        .task-emerald:hover .task-check { border-color: rgba(52, 211, 153, 0.5); }
+
+        .task-amber input:checked + .task-check {
+            background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%);
+            border-color: #fbbf24;
+            box-shadow: 0 2px 10px rgba(251, 191, 36, 0.3);
+        }
+        .task-amber:hover .task-check { border-color: rgba(251, 191, 36, 0.5); }
+
+        .task-pink input:checked + .task-check {
+            background: linear-gradient(135deg, #f472b6 0%, #ec4899 100%);
+            border-color: #f472b6;
+            box-shadow: 0 2px 10px rgba(244, 114, 182, 0.3);
+        }
+        .task-pink:hover .task-check { border-color: rgba(244, 114, 182, 0.5); }
     </style>
 </head>
 <body class="font-inter">
@@ -702,6 +753,176 @@
                 <div class="h-px bg-gradient-to-r from-transparent via-accent-pink/30 to-transparent mb-6"></div>
 
                 <!-- ============================================= -->
+                <!-- SECTION: Czynności realizowane przez asystenta AI -->
+                <!-- ============================================= -->
+                <div class="mb-6 animate-fadeInUp delay-300">
+                    <div class="flex items-center gap-2 mb-4">
+                        <div class="icon-box w-9 h-9 rounded-lg flex items-center justify-center">
+                            <svg class="w-4 h-4 text-accent-cyan" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"/>
+                            </svg>
+                        </div>
+                        <div>
+                            <h2 class="text-base font-semibold text-white">Czynności realizowane przez asystenta AI</h2>
+                            <p class="text-gray-500 text-xs">Zaznacz zadania, które ma wykonywać agent</p>
+                        </div>
+                    </div>
+
+                    <!-- 1. Odbieranie połączeń przychodzących — CYAN -->
+                    <div class="mb-5 task-section task-section-cyan rounded-xl p-4 border border-cyan-500/15 bg-cyan-500/[0.03]">
+                        <h3 class="text-xs font-semibold text-cyan-400 mb-3 flex items-center gap-1.5">
+                            <span class="w-5 h-5 rounded bg-cyan-400/20 flex items-center justify-center text-[10px] font-bold text-cyan-400">1</span>
+                            Odbieranie połączeń przychodzących, w tym:
+                        </h3>
+                        <div class="space-y-1.5">
+                            <label class="task-checkbox task-cyan flex items-center gap-3 p-2.5 rounded-lg cursor-pointer transition-all hover:bg-cyan-500/10">
+                                <input type="checkbox" name="task_umawianie_wizyt" value="true" class="hidden">
+                                <div class="task-check w-5 h-5 rounded border-2 border-white/20 bg-white/5 flex items-center justify-center flex-shrink-0 transition-all">
+                                    <svg class="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/></svg>
+                                </div>
+                                <span class="text-sm text-gray-300">Umawianie wizyt</span>
+                            </label>
+                            <label class="task-checkbox task-cyan flex items-center gap-3 p-2.5 rounded-lg cursor-pointer transition-all hover:bg-cyan-500/10">
+                                <input type="checkbox" name="task_zmiana_terminow" value="true" class="hidden">
+                                <div class="task-check w-5 h-5 rounded border-2 border-white/20 bg-white/5 flex items-center justify-center flex-shrink-0 transition-all">
+                                    <svg class="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/></svg>
+                                </div>
+                                <span class="text-sm text-gray-300">Zmiana terminów wizyt</span>
+                            </label>
+                            <label class="task-checkbox task-cyan flex items-center gap-3 p-2.5 rounded-lg cursor-pointer transition-all hover:bg-cyan-500/10">
+                                <input type="checkbox" name="task_info_placowka" value="true" class="hidden">
+                                <div class="task-check w-5 h-5 rounded border-2 border-white/20 bg-white/5 flex items-center justify-center flex-shrink-0 transition-all">
+                                    <svg class="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/></svg>
+                                </div>
+                                <span class="text-sm text-gray-300">Udzielanie podstawowych informacji o placówce</span>
+                            </label>
+                            <label class="task-checkbox task-cyan flex items-center gap-3 p-2.5 rounded-lg cursor-pointer transition-all hover:bg-cyan-500/10">
+                                <input type="checkbox" name="task_info_badania" value="true" class="hidden">
+                                <div class="task-check w-5 h-5 rounded border-2 border-white/20 bg-white/5 flex items-center justify-center flex-shrink-0 transition-all">
+                                    <svg class="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/></svg>
+                                </div>
+                                <span class="text-sm text-gray-300">Udzielanie podstawowych informacji o przeprowadzanych badaniach</span>
+                            </label>
+                            <label class="task-checkbox task-cyan flex items-center gap-3 p-2.5 rounded-lg cursor-pointer transition-all hover:bg-cyan-500/10">
+                                <input type="checkbox" name="task_info_oferta" value="true" class="hidden">
+                                <div class="task-check w-5 h-5 rounded border-2 border-white/20 bg-white/5 flex items-center justify-center flex-shrink-0 transition-all">
+                                    <svg class="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/></svg>
+                                </div>
+                                <span class="text-sm text-gray-300">Udzielanie podstawowych informacji o ofercie</span>
+                            </label>
+                            <label class="task-checkbox task-cyan flex items-center gap-3 p-2.5 rounded-lg cursor-pointer transition-all hover:bg-cyan-500/10">
+                                <input type="checkbox" name="task_info_terminy" value="true" class="hidden">
+                                <div class="task-check w-5 h-5 rounded border-2 border-white/20 bg-white/5 flex items-center justify-center flex-shrink-0 transition-all">
+                                    <svg class="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/></svg>
+                                </div>
+                                <span class="text-sm text-gray-300">Udzielanie informacji o możliwych dostępnych terminach</span>
+                            </label>
+                            <label class="task-checkbox task-cyan flex items-center gap-3 p-2.5 rounded-lg cursor-pointer transition-all hover:bg-cyan-500/10">
+                                <input type="checkbox" name="task_odwolywanie_wizyt" value="true" class="hidden">
+                                <div class="task-check w-5 h-5 rounded border-2 border-white/20 bg-white/5 flex items-center justify-center flex-shrink-0 transition-all">
+                                    <svg class="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/></svg>
+                                </div>
+                                <span class="text-sm text-gray-300">Odwoływanie wizyt, w tym proponowanie innego terminu</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- 2. Potwierdzanie wizyt — EMERALD -->
+                    <div class="mb-5 task-section task-section-emerald rounded-xl p-4 border border-emerald-500/15 bg-emerald-500/[0.03]">
+                        <h3 class="text-xs font-semibold text-emerald-400 mb-3 flex items-center gap-1.5">
+                            <span class="w-5 h-5 rounded bg-emerald-400/20 flex items-center justify-center text-[10px] font-bold text-emerald-400">2</span>
+                            Potwierdzanie wizyt, w tym:
+                        </h3>
+                        <div class="space-y-1.5">
+                            <label class="task-checkbox task-emerald flex items-center gap-3 p-2.5 rounded-lg cursor-pointer transition-all hover:bg-emerald-500/10">
+                                <input type="checkbox" name="task_telefon_przed_wizyta" value="true" class="hidden">
+                                <div class="task-check w-5 h-5 rounded border-2 border-white/20 bg-white/5 flex items-center justify-center flex-shrink-0 transition-all">
+                                    <svg class="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/></svg>
+                                </div>
+                                <span class="text-sm text-gray-300">Telefon wykonany do pacjenta ok. jedną dobę przed wizytą</span>
+                            </label>
+                            <label class="task-checkbox task-emerald flex items-center gap-3 p-2.5 rounded-lg cursor-pointer transition-all hover:bg-emerald-500/10">
+                                <input type="checkbox" name="task_sms_po_rezerwacji" value="true" class="hidden">
+                                <div class="task-check w-5 h-5 rounded border-2 border-white/20 bg-white/5 flex items-center justify-center flex-shrink-0 transition-all">
+                                    <svg class="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/></svg>
+                                </div>
+                                <span class="text-sm text-gray-300">SMS od razu po zarezerwowanym terminie przez asystenta</span>
+                            </label>
+                            <label class="task-checkbox task-emerald flex items-center gap-3 p-2.5 rounded-lg cursor-pointer transition-all hover:bg-emerald-500/10">
+                                <input type="checkbox" name="task_sms_przypomnienie" value="true" class="hidden">
+                                <div class="task-check w-5 h-5 rounded border-2 border-white/20 bg-white/5 flex items-center justify-center flex-shrink-0 transition-all">
+                                    <svg class="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/></svg>
+                                </div>
+                                <span class="text-sm text-gray-300">SMS ok. 3h przed wizytą z przypomnieniem</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- 3. Zakres wiadomości SMS — AMBER -->
+                    <div class="mb-5 task-section task-section-amber rounded-xl p-4 border border-amber-500/15 bg-amber-500/[0.03]">
+                        <h3 class="text-xs font-semibold text-amber-400 mb-3 flex items-center gap-1.5">
+                            <span class="w-5 h-5 rounded bg-amber-400/20 flex items-center justify-center text-[10px] font-bold text-amber-400">3</span>
+                            Zakres wiadomości SMS
+                        </h3>
+                        <div class="space-y-1.5">
+                            <label class="task-checkbox task-amber flex items-center gap-3 p-2.5 rounded-lg cursor-pointer transition-all hover:bg-amber-500/10">
+                                <input type="checkbox" name="task_sms_podstawowe" value="true" class="hidden">
+                                <div class="task-check w-5 h-5 rounded border-2 border-white/20 bg-white/5 flex items-center justify-center flex-shrink-0 transition-all">
+                                    <svg class="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/></svg>
+                                </div>
+                                <span class="text-sm text-gray-300">Podstawowe informacje (Data, miejsce wizyty, godzina)</span>
+                            </label>
+                            <label class="task-checkbox task-amber flex items-center gap-3 p-2.5 rounded-lg cursor-pointer transition-all hover:bg-amber-500/10">
+                                <input type="checkbox" name="task_sms_rozszerzone" value="true" class="hidden">
+                                <div class="task-check w-5 h-5 rounded border-2 border-white/20 bg-white/5 flex items-center justify-center flex-shrink-0 transition-all">
+                                    <svg class="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/></svg>
+                                </div>
+                                <span class="text-sm text-gray-300">Informacje rozszerzone (Jak przygotować się do wizyty/badania, wskazówki dotyczące lokalizacji)</span>
+                            </label>
+                            <label class="task-checkbox task-amber flex items-center gap-3 p-2.5 rounded-lg cursor-pointer transition-all hover:bg-amber-500/10">
+                                <input type="checkbox" name="task_sms_inne" value="true" class="hidden">
+                                <div class="task-check w-5 h-5 rounded border-2 border-white/20 bg-white/5 flex items-center justify-center flex-shrink-0 transition-all">
+                                    <svg class="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/></svg>
+                                </div>
+                                <span class="text-sm text-gray-300">Inne informacje</span>
+                            </label>
+                            <div id="smsInneInput" class="ml-8 mt-1">
+                                <input type="text" name="task_sms_inne_opis" 
+                                    class="input-field w-full px-3 py-2 rounded-lg text-white text-sm"
+                                    placeholder="Opisz jakie inne informacje w SMS...">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 4. Inne — PINK -->
+                    <div class="mb-2 task-section task-section-pink rounded-xl p-4 border border-pink-500/15 bg-pink-500/[0.03]">
+                        <h3 class="text-xs font-semibold text-pink-400 mb-3 flex items-center gap-1.5">
+                            <span class="w-5 h-5 rounded bg-pink-400/20 flex items-center justify-center text-[10px] font-bold text-pink-400">4</span>
+                            Inne
+                        </h3>
+                        <div class="space-y-1.5">
+                            <label class="task-checkbox task-pink flex items-center gap-3 p-2.5 rounded-lg cursor-pointer transition-all hover:bg-pink-500/10">
+                                <input type="checkbox" name="task_jezyk_ukrainski" value="true" class="hidden">
+                                <div class="task-check w-5 h-5 rounded border-2 border-white/20 bg-white/5 flex items-center justify-center flex-shrink-0 transition-all">
+                                    <svg class="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/></svg>
+                                </div>
+                                <span class="text-sm text-gray-300">Rozmowa w języku ukraińskim (po wykryciu)</span>
+                            </label>
+                            <label class="task-checkbox task-pink flex items-center gap-3 p-2.5 rounded-lg cursor-pointer transition-all hover:bg-pink-500/10">
+                                <input type="checkbox" name="task_jezyk_angielski" value="true" class="hidden">
+                                <div class="task-check w-5 h-5 rounded border-2 border-white/20 bg-white/5 flex items-center justify-center flex-shrink-0 transition-all">
+                                    <svg class="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/></svg>
+                                </div>
+                                <span class="text-sm text-gray-300">Rozmowa w języku angielskim (po wykryciu)</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Divider -->
+                <div class="h-px bg-gradient-to-r from-transparent via-accent-cyan/30 to-transparent mb-6"></div>
+
+                <!-- ============================================= -->
                 <!-- SECTION 4: Ustawienia techniczne -->
                 <!-- ============================================= -->
                 <div class="mb-6 animate-fadeInUp delay-400">
@@ -747,55 +968,6 @@
                         <textarea name="redirect_scenarios" rows="2"
                             class="input-field w-full px-3 py-2.5 rounded-lg text-white text-sm resize-none"
                             placeholder="np. nagłe przypadki, reklamacje, pytania o wyniki badań, rozmowa z lekarzem..."></textarea>
-                    </div>
-
-                    <!-- Godziny pracy agenta -->
-                    <div class="mb-5">
-                        <label class="block text-xs font-medium text-gray-300 mb-3">
-                            <span class="flex items-center gap-1.5">
-                                <svg class="w-3.5 h-3.5 text-accent-purple" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
-                                </svg>
-                                Godziny pracy agenta *
-                            </span>
-                        </label>
-                        <div class="grid grid-cols-2 gap-3">
-                            <label class="option-card rounded-xl p-3 text-center cursor-pointer relative" data-value="24/7">
-                                <input type="radio" name="working_hours" value="24/7 - całodobowo" class="hidden" required>
-                                <div class="check-badge">
-                                    <svg class="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/>
-                                    </svg>
-                                </div>
-                                <div class="option-icon w-10 h-10 rounded-lg bg-white/10 flex items-center justify-center mx-auto mb-2 transition-all">
-                                    <svg class="w-5 h-5 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
-                                    </svg>
-                                </div>
-                                <span class="text-white font-semibold text-sm">24/7</span>
-                                <p class="text-gray-500 text-[10px] mt-0.5">Całodobowo</p>
-                            </label>
-                            <label class="option-card rounded-xl p-3 text-center cursor-pointer relative" data-value="godziny_pracy">
-                                <input type="radio" name="working_hours" value="Godziny pracy placówki" class="hidden">
-                                <div class="check-badge">
-                                    <svg class="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/>
-                                    </svg>
-                                </div>
-                                <div class="option-icon w-10 h-10 rounded-lg bg-white/10 flex items-center justify-center mx-auto mb-2 transition-all">
-                                    <svg class="w-5 h-5 text-accent-cyan" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/>
-                                    </svg>
-                                </div>
-                                <span class="text-white font-semibold text-sm">Godziny pracy</span>
-                                <p class="text-gray-500 text-[10px] mt-0.5">Według placówki</p>
-                            </label>
-                        </div>
-                        <div id="workingHoursInput" class="mt-3 hidden">
-                            <input type="text" name="working_hours_detail" 
-                                class="input-field w-full px-3 py-2.5 rounded-lg text-white text-sm"
-                                placeholder="np. Pon-Pt 8:00-18:00, Sob 9:00-13:00">
-                        </div>
                     </div>
 
                     <!-- Uwagi dodatkowe -->
@@ -1018,16 +1190,7 @@
                 this.classList.add('selected');
                 input.checked = true;
 
-                if (name === 'working_hours') {
-                    const hoursInput = document.getElementById('workingHoursInput');
-                    if (input.value === 'Godziny pracy placówki') {
-                        hoursInput.classList.remove('hidden');
-                        hoursInput.querySelector('input').focus();
-                    } else {
-                        hoursInput.classList.add('hidden');
-                        hoursInput.querySelector('input').value = '';
-                    }
-                }
+                
             });
         });
 
@@ -1113,11 +1276,35 @@
             
             const formData = new FormData(this);
 
-            let workingHours = formData.get('working_hours');
-            if (workingHours === 'Godziny pracy placówki') {
-                const detail = formData.get('working_hours_detail');
-                if (detail) workingHours += ': ' + detail;
+            const taskLabels = {
+                task_umawianie_wizyt: 'Umawianie wizyt',
+                task_zmiana_terminow: 'Zmiana terminów wizyt',
+                task_info_placowka: 'Info o placówce',
+                task_info_badania: 'Info o badaniach',
+                task_info_oferta: 'Info o ofercie',
+                task_info_terminy: 'Info o terminach',
+                task_odwolywanie_wizyt: 'Odwoływanie wizyt',
+                task_telefon_przed_wizyta: 'Telefon przed wizytą',
+                task_sms_po_rezerwacji: 'SMS po rezerwacji',
+                task_sms_przypomnienie: 'SMS przypomnienie 3h',
+                task_sms_podstawowe: 'SMS - podstawowe info',
+                task_sms_rozszerzone: 'SMS - rozszerzone info',
+                task_sms_inne: 'SMS - inne info',
+                task_jezyk_ukrainski: 'Język ukraiński',
+                task_jezyk_angielski: 'Język angielski'
+            };
+            let tasksSelected = [];
+            let tasksUnselected = [];
+            for (const [key, label] of Object.entries(taskLabels)) {
+                if (formData.get(key)) {
+                    tasksSelected.push(label);
+                } else {
+                    tasksUnselected.push(label);
+                }
             }
+            const smsInneOpis = formData.get('task_sms_inne_opis');
+            if (smsInneOpis) tasksSelected.push('SMS inne opis: ' + smsInneOpis);
+            const tasksString = 'TAK: ' + tasksSelected.join(', ') + (tasksUnselected.length ? '\nNIE: ' + tasksUnselected.join(', ') : '');
 
             let faqEntries = [];
             document.querySelectorAll('#faqContainer .faq-item').forEach(item => {
@@ -1138,7 +1325,7 @@
                 faq: faqString,
                 redirect_phone: formData.get('redirect_phone') || 'Nie podano',
                 redirect_scenarios: formData.get('redirect_scenarios') || 'Nie podano',
-                working_hours: workingHours || 'Nie wybrano',
+                czynnosci: tasksString,
                 notes: formData.get('notes') || 'Brak dodatkowych uwag',
             };
             
